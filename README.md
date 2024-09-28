@@ -1,3 +1,12 @@
+![](/assets/twistBraid.png) _In our design environment for editing knitting
+charts with blended primitives, a chart of knitting instructions is rasterized
+from layered vector boundaries and paths with associated raster stitch and yarn
+blocks. These cabled twist and braid patterns are designed using stitch paths we
+defined to encode a "right-leaning twist" (A) and a "left-leaning twist" (B). By
+placing the right twist along a stitch path that defines a purl border (C), we
+can produce a twist texture (D). By staggering both the left and right twists
+(E), we can produce a braid texture (F)._
+
 # blended-primitives
 
 This is a fork of the KnitScape editor shown in the UIST 2024 paper "What's in a
