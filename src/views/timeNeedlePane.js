@@ -1,5 +1,5 @@
 import { html } from "lit-html";
-import { GLOBAL_STATE, dispatch } from "../state";
+import { GLOBAL_STATE } from "../state";
 
 let scale = 15;
 let x = 35;
@@ -7,6 +7,7 @@ let y = 0;
 
 export function timeNeedleView() {
   const { passSchedule, yarnSchedule, yarnPalette } = GLOBAL_STATE;
+
   return html`<div id="time-needle-pane" @wheel=${zoom} @pointerdown=${pan}>
     <div
       class="yarn-assignments"
@@ -24,7 +25,7 @@ export function timeNeedleView() {
       class="time-needle-container"
       style="height: ${passSchedule.length *
       scale}px; transform: translate(${x}px, ${y}px)">
-      <img id="timeneedlebitmap" />
+      <canvas id="timeneedlebitmap"></canvas>
     </div>
   </div> `;
 }

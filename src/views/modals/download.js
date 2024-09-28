@@ -18,7 +18,7 @@ export function downloadModal() {
       </button>
       <button
         class="btn solid"
-        @click=${() => downloadTimeNeedleBMP(GLOBAL_STATE.passSchedule)}>
+        @click=${() => downloadTimeNeedleBMP(GLOBAL_STATE)}>
         Time Needle BMP
       </button>
     </div>

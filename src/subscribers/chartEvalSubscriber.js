@@ -1,6 +1,6 @@
 import { GLOBAL_STATE, dispatch } from "../state";
 import { rasterizeChart } from "../charting/evalChart";
-import { bBoxAllBoundaries } from "../charting/helpers";
+import { bBoxAllBoundaries, arrToImageData } from "../charting/helpers";
 import { scheduleChart } from "../charting/planner";
 
 function debounce(callback, wait) {
@@ -14,35 +14,36 @@ function debounce(callback, wait) {
 }
 
 function evalChart() {
-  const { boundaries, regions, blocks, paths, showTimeNeedleView } =
-    GLOBAL_STATE;
+  const { boundaries, regions, blocks, paths } = GLOBAL_STATE;
 
   let { stitchChart, yarnChart, machineChart, yarnSequence, rowMap } =
     rasterizeChart(boundaries, regions, blocks, paths);
 
-  if (showTimeNeedleView) {
-    const { passes, yarns } = scheduleChart(machineChart, yarnSequence);
-    dispatch({
-      chart: stitchChart,
-      yarnChart,
-      machineChart,
-      yarnSequence,
-      rowMap,
-      bbox: bBoxAllBoundaries(boundaries),
-      passSchedule: passes,
-      yarnSchedule: yarns,
-    });
-  } else {
-    dispatch({
-      chart: stitchChart,
-      yarnChart,
-      machineChart,
-      yarnSequence,
-      rowMap,
-      bbox: bBoxAllBoundaries(boundaries),
-    });
+  const { passes, yarns } = scheduleChart(machineChart, yarnSequence);
+
+  const timeNeedle = arrToImageData(passes.toReversed());
+
+  const canvas = document.getElementById("timeneedlebitmap");
+  if (canvas) {
+    canvas.width = passes[0].length;
+    canvas.height = passes.length;
+    const ctx = canvas.getContext("2d");
+    ctx.putImageData(timeNeedle, 0, 0);
   }
+
+  dispatch({
+    chart: stitchChart,
+    yarnChart,
+    machineChart,
+    yarnSequence,
+    rowMap,
+    bbox: bBoxAllBoundaries(boundaries),
+    passSchedule: passes,
+    timeNeedle: timeNeedle,
+    yarnSchedule: yarns,
+  });
 }
+
 export function chartEvalSubscriber() {
   return () => {
     const debouncedEval = debounce(evalChart, 30);

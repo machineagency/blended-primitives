@@ -9,7 +9,6 @@ import { blockSubscriber } from "./subscribers/blockSubscriber";
 import { blockFillSubscriber } from "./subscribers/blockFillSubscriber";
 import { chartEvalSubscriber } from "./subscribers/chartEvalSubscriber";
 import { pathTileSubscriber } from "./subscribers/pathTileSubscriber";
-import { timeNeedleSubscriber } from "./subscribers/timeNeedleViewSubscriber";
 import { globalKeydown, globalKeyup } from "./interaction/globalKeypress";
 
 import { hydrateWorkspaceJSON } from "./utilities/importers";
@@ -51,7 +50,6 @@ async function init() {
     blockSubscriber(),
     blockFillSubscriber(),
     pathTileSubscriber(),
-    timeNeedleSubscriber(),
     runSimulation(),
   ]);
 

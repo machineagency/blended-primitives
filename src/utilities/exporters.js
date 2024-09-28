@@ -1,6 +1,3 @@
-import { bmp_lib } from "../lib/bmp";
-import { hexToRgb } from "./misc";
-import { SYMBOL_DATA } from "../constants";
 import { scheduleChart } from "../charting/planner";
 
 function downloadFile(dataStr, fileName) {
@@ -94,14 +91,19 @@ export function downloadKniterate({ machineChart, yarnSequence }) {
   );
 }
 
-export function downloadTimeNeedleBMP(passSchedule) {
-  const bmp2d = passSchedule.toReversed();
-  const rgbPalette = Object.values(SYMBOL_DATA).map(({ color }) =>
-    hexToRgb(color)
-  );
+export function downloadTimeNeedleBMP({ passSchedule, timeNeedle }) {
+  const canvas = document.createElement("canvas");
 
-  const im = document.createElement("img");
-  bmp_lib.render(im, bmp2d, rgbPalette);
+  canvas.width = passSchedule[0].length;
+  canvas.height = passSchedule.length;
 
-  downloadFile(im.src, "pattern.bmp");
+  const ctx = canvas.getContext("2d");
+  ctx.putImageData(timeNeedle, 0, 0);
+
+  canvas.toBlob((blob) => {
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "pattern.bmp";
+    link.click();
+  }, "image/bmp");
 }

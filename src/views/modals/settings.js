@@ -27,7 +27,8 @@ export function settingsModal() {
       <button
         class="btn solid"
         style="align-self: center;"
-        @click=${() => window.open("https://github.com/knitscape/knitscape")}>
+        @click=${() =>
+          window.open("https://github.com/machineagency/blended-primitives")}>
         <i class="fa-brands fa-github"></i>
       </button>
     </div>

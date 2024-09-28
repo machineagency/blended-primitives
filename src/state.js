@@ -51,6 +51,7 @@ let GLOBAL_STATE = {
   yarnSequence: [],
   passSchedule: [],
   yarnSchedule: [],
+  timeNeedle: null,
 
   scale: 15, // Number of pixels for each chart cell
   cellWidth: 15 / 7,
