@@ -1,82 +1,21 @@
-# knitscape
+# blended-primitives
 
-KnitScape is a design and simulation tool for machine knitting.
+This is a fork of the KnitScape editor shown in the UIST 2024 paper "What's in a
+Cable? Abstracting Knitting Design Elements with Blended Raster/Vector
+Primitives".
 
-- Chart
-  - [x] Toggle color mode between yarn color and operation color.
-  - [x] Back bed operations should be slightly dimmed in chart view.
-- Box Selection
-  - [x] Drag to select an area, and add new stitch block or boundary
-  - [ ] Show size of selection
-- Interaction
-  - [ ] select multiple points in path and move them together
-  - [ ] use arrow keys to translate boundaries and paths
-- path
-  - [x] select path
-  - [x] duplicate
-  - [x] change layer: raise/lower/front/back
-  - [ ] attach path to boundary segment(s)
-  - [ ] constrain to stitch slope?
-  - [ ] group paths
-  - [ ] linear pattern paths
-- Boundaries/block fill
-  - [x] Add and remove boundary
-  - [x] Drag whole boundary, paths, and points
-  - [x] Add and remove points
-  - [x] Yarn and stitch fill blocks
-  - [x] Move yarn and stitch fill origin
-  - [x] show boundary size when selected
-  - [x] change layer: raise/lower/front/back
-  - [x] duplicate
-  - [ ] affine transforms (reflect, scale, shear, rotate)
-  - [ ] multiselect
-- Free blocks
-  - [x] Add, edit, remove, resize, reposition, and select block
-  - [x] Toggle block edit mode between Yarn and stitch
-  - [x] Dim rest of chart while editing
-    - Should this be a setting? Should it be dimmed, or grayscale? Blurred?
-  - [x] show operation select when editing stitch block
-  - [x] evaluate chart on block edit
-  - [ ] Copy and paste block
-  - [ ] Select multiple blocks to move together
-  - [ ] Download bitmap for block
-  - [ ] download punchcard just for block
-- Yarn Sequencer
-  - [x] visualize active yarns in each row
-  - [ ] show carriage direction
+KnitScape is a design and simulation tool for machine knitting. Development
+continues [here](https://github.com/machineagency/knitscape).
+
+The previous editor for designing colorwork patterns is located
+[here](https://github.com/machineagency/swatchscape).
 
 ## priority fixes
 
 - [ ] undo is currently bugged
 - [ ] sim topology resets on zoom/flip
 - [ ] removing a yarn from the yarn palette is bugged
-
-## ideas
-
-- UI
-  - synchronized simulation/chart view mode (pan/zoom updates both views)
-- gauge
-  - edit overall gauge/stitch aspect, and fit chart on gauge change
-  - how to define different gauges for different regions of the chart? is that
-    even a good idea?
-- errors/verification
-  - highlight floats over max float distance
-  - highlight unstable loops in sim
-  - highlight stitch slopes?
-  - how to show if loops are transferred outside bounds?
-- blocks
-  - You should be able to download any block as a bitmap. should be not hard to
-    implement. perhaps also download any block as a punchcard.
-  - As you create blocks, they get added to a library of active blocks. Any
-    fill/path/free block could use an existing block in the library.
-- Constraints!
-  - Stitch slope
-- [ ] curves?
-
-## bugs, fixes
-
 - polygon fill scanline is sometimes slightly off?
-
 - simulation/yarn view
   - shouldn't regenerate yarn topology/cancel relaxation on zoom or when yarn
     colors are changed

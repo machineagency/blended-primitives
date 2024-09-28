@@ -77,7 +77,7 @@ export function downloadKniterate({ machineChart, yarnSequence }) {
     new Array(machineChart.width).fill(yarnIndex).join("")
   );
 
-  console.log(passes);
+  // console.log(passes);
   const text =
     "FILE FORMAT : DAK\nYARNS\n" +
     colors.toReversed().join("\n") +

@@ -1,19 +1,18 @@
 {
-  "name": "knitscape",
+  "name": "blended-primitives",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "branchwelder",
+  "author": "Hannah Twigg-Smith",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
     "host": "vite --host",
     "build": "vite build",
     "preview": "vite build && vite preview",
-    "deploy": "vite build && echo knitscape.net > ./dist/CNAME && gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@eastdesire/jscolor": "^2.5.1",
-    "d3": "^7.8.5",
     "lit-html": "^2.7.5",
     "split.js": "^1.6.5",
     "vite": "^4.4.7"

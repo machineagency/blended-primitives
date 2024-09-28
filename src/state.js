@@ -14,7 +14,7 @@ let GLOBAL_STATE = {
 
   // Chart view states
   colorMode: "yarn", // operation or yarn
-  annotations: true, // slope and point annotations for paths and boundaries
+  annotations: false, // slope and point annotations for paths and boundaries
 
   // Interaction mode can be path, boundary, or block.
   interactionMode: "boundary",
