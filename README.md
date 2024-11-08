@@ -1,14 +1,13 @@
 # blended-primitives
 
 KnitScape is a design and simulation tool for machine knitting made by Hannah
-Twigg-Smith. This repository archives a fork of the KnitScape editor shown in
-the UIST 2024 paper
+Twigg-Smith. This is an archival version of the KnitScape editor which
+accompanies the UIST 2024 paper
 ["What's in a Cable? Abstracting Knitting Design Elements with Blended Raster/Vector Primitives"](https://dl.acm.org/doi/10.1145/3654777.3676351).
-This version will no longer be updated outside of minor quality of life updates.
-Future development will continue in the dedicated KnitScape org
-[here](https://github.com/knitscape/). The previous editor specifically for
-designing slip and tuck colorwork patterns is located
-[here](https://github.com/machineagency/knitscape-2024).
+This version will no longer be actively developed; future development will
+continue in [the dedicated KnitScape org](https://github.com/knitscape/). The
+previous editor specifically for designing slip and tuck colorwork patterns is
+located [here](https://github.com/machineagency/knitscape-2024).
 
 ![](/assets/twistBraid.png) _In our design environment for editing knitting
 charts with blended primitives, a chart of knitting instructions is rasterized
