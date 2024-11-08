@@ -4,12 +4,13 @@
   "main": "index.js",
   "author": "Hannah Twigg-Smith",
   "license": "MIT",
+  "homepage": "https://machineagency.github.io/blended-primitives/",
   "scripts": {
     "dev": "vite",
     "host": "vite --host",
     "build": "vite build",
     "preview": "vite build && vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "vite build --base=/blended-primitives/ && gh-pages -d dist"
   },
   "dependencies": {
     "@eastdesire/jscolor": "^2.5.2",
