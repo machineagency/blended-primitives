@@ -9,17 +9,17 @@ can produce a twist texture (D). By staggering both the left and right twists
 
 # blended-primitives
 
-This is a fork of the KnitScape editor shown in the UIST 2024 paper "What's in a
-Cable? Abstracting Knitting Design Elements with Blended Raster/Vector
-Primitives".
+KnitScape is a design and simulation tool for machine knitting made by Hannah
+Twigg-Smith. This repository archives a fork of the KnitScape editor shown in
+the UIST 2024 paper
+["What's in a Cable? Abstracting Knitting Design Elements with Blended Raster/Vector Primitives"](https://dl.acm.org/doi/10.1145/3654777.3676351).
+This version will no longer be updated outside of minor quality of life updates.
+Future development will continue in the dedicated KnitScape org
+[here](https://github.com/knitscape/knitscape). The previous editor specifically
+for designing slip and tuck colorwork patterns is located
+[here](https://github.com/machineagency/knitscape-2024).
 
-KnitScape is a design and simulation tool for machine knitting. Development
-continues [here](https://github.com/machineagency/knitscape).
-
-The previous editor for designing colorwork patterns is located
-[here](https://github.com/machineagency/swatchscape).
-
-## priority fixes
+<!-- ## priority fixes
 
 - [ ] undo is currently bugged
 - [ ] sim topology resets on zoom/flip
@@ -30,7 +30,7 @@ The previous editor for designing colorwork patterns is located
     colors are changed
   - edge node layout is not correct
   - currently not drawing the last few segments in a yarn.
-  - add yarn entry and exit points to indicate where they start and end
+  - add yarn entry and exit points to indicate where they start and end -->
 
 ## Primitive elements:
 
