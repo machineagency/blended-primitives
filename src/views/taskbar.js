@@ -11,7 +11,7 @@ export function taskbar() {
     showTimeNeedleView,
   } = GLOBAL_STATE;
   return html` <div id="taskbar">
-    <h1 class="site-title">KnitScape</h1>
+    <h1 class="site-title">blended-primitives</h1>
     <div class="button-group">
       <div class="radio-group">
         <button

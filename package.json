@@ -12,12 +12,12 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
-    "@eastdesire/jscolor": "^2.5.1",
-    "lit-html": "^2.7.5",
+    "@eastdesire/jscolor": "^2.5.2",
+    "lit-html": "^3.2.1",
     "split.js": "^1.6.5",
-    "vite": "^4.4.7"
+    "vite": "^5.4.10"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^6.2.0"
   }
 }
