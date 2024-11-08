@@ -1,12 +1,3 @@
-![](/assets/twistBraid.png) _In our design environment for editing knitting
-charts with blended primitives, a chart of knitting instructions is rasterized
-from layered vector boundaries and paths with associated raster stitch and yarn
-blocks. These cabled twist and braid patterns are designed using stitch paths we
-defined to encode a "right-leaning twist" (A) and a "left-leaning twist" (B). By
-placing the right twist along a stitch path that defines a purl border (C), we
-can produce a twist texture (D). By staggering both the left and right twists
-(E), we can produce a braid texture (F)._
-
 # blended-primitives
 
 KnitScape is a design and simulation tool for machine knitting made by Hannah
@@ -15,9 +6,18 @@ the UIST 2024 paper
 ["What's in a Cable? Abstracting Knitting Design Elements with Blended Raster/Vector Primitives"](https://dl.acm.org/doi/10.1145/3654777.3676351).
 This version will no longer be updated outside of minor quality of life updates.
 Future development will continue in the dedicated KnitScape org
-[here](https://github.com/knitscape/knitscape). The previous editor specifically
-for designing slip and tuck colorwork patterns is located
+[here](https://github.com/knitscape/). The previous editor specifically for
+designing slip and tuck colorwork patterns is located
 [here](https://github.com/machineagency/knitscape-2024).
+
+![](/assets/twistBraid.png) _In our design environment for editing knitting
+charts with blended primitives, a chart of knitting instructions is rasterized
+from layered vector boundaries and paths with associated raster stitch and yarn
+blocks. These cabled twist and braid patterns are designed using stitch paths we
+defined to encode a "right-leaning twist" (A) and a "left-leaning twist" (B). By
+placing the right twist along a stitch path that defines a purl border (C), we
+can produce a twist texture (D). By staggering both the left and right twists
+(E), we can produce a braid texture (F)._
 
 <!-- ## priority fixes
 
@@ -38,20 +38,16 @@ Base primitives:
 
 - **Stitch block:** A bitmap of stitch operations.
 - **Yarn block:** A bitmap of yarn operations.
-- **Path:** A vector path connecting the center points of two stitches.
+- **Path:** A vector path between stitch coordinates. We use the lower left
+  corner of the stitch as the index.
 - **Boundary:** A series of paths enclosing a region.
 
-Blended primitives:
+This creates four types of blended primitives:
 
-- stitch paths
-  - select stitch block and path to make a stitch path
-  - constrain slope to whole-number stitch slopes, e.g. 3/1, 5/2 ?
-- stitch region
-  - a boundary filled with a stitch block
-- Yarn Edge
-  - A border between two yarn areas, with a yarn block assigned to each side.
-  - ? How to handle boundary conditions, such as adding a tuck for intarsia? We
-    can hardcode this for now, but how to define custom boundary conditions?
+- **Stitch paths**
+- **Yarn paths**
+- **Stitch fills**
+- **Yarn fills**
 
 ## Interaction Modes
 
