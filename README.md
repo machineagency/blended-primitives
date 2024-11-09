@@ -40,7 +40,8 @@ Make sure you have Node installed. We tested this with Node version 23.1.0.
 1. `npm install`
 2. `npm run dev`
 
-To deploy, run `npm run deploy`.
+# Definitions
+More documentation coming soon!
 
 ## Primitive elements:
 
