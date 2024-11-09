@@ -31,6 +31,17 @@ can produce a twist texture (D). By staggering both the left and right twists
   - currently not drawing the last few segments in a yarn.
   - add yarn entry and exit points to indicate where they start and end -->
 
+## [You can use KnitScape II (Blended Primitives) here!](https://machineagency.github.io/blended-primitives)
+
+## Running Locally
+
+Make sure you have Node installed. We tested this with Node version 23.1.0.
+
+1. `npm install`
+2. `npm run dev`
+
+To deploy, run `npm run deploy`.
+
 ## Primitive elements:
 
 Base primitives:
